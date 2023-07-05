@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Landing Page</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        background-color: #f2f2f2;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+      
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+      
+      nav ul li {
+        margin-right: 10px;
+      }
+      
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      section {
+        padding: 80px 0;
+        text-align: center;
+      }
+      
+      section h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      
+      section p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      
+      .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+      
+      .cta-button:hover {
+        background-color: #555;
+      }
+      
+      .service {
+        margin-bottom: 40px;
+      }
+      
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      
+      form button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+      
+      form button:hover {
+        background-color: #555;
+      }
+      
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Travel Around The World With US</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="container">
+      <h2>Travel Themes</h2>
+      <p>If you’ve got an idea of which style of trip will suit you best,
+         take a look at our different trip themes below, as there’s something to 
+         suit everyone. Whether you’re chasing a global food-focused dream or
+          wanting to ride your bike across the Rockies,
+         Intrepid has a themed adventure that's perfect for you</p>
+      <a href="#about" class="cta-button">Learn More</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are dedicated to providing a good services
+        int the traceling all around the worls by good facilities and sanitisation.
+        we here to be with you,make your journey successfull and joyful.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service">
+        <h3>Good and HYgenic Food</h3>
+        <p>varitey of food items will be avaialabe in the whole jouney</p>
+      </div>
+      <div class="service">
+        <h3>Gudielines</h3>
+        <p>guide lines will be provded with experts teams
+            clar explanation will be provided abut the travelling
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="number" name="number"placeholder="your mobile number" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Landing Page. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Smooth scrolling for anchor links
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        for (let anchorLink of anchorLinks) {
+          anchorLink.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const offsetTop = targetElement.offsetTop;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth"
+              });
+            }
+          });
+        }
+      
+        // Contact form submission
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const formData = new FormData(contactForm);
+          const name = formData.get("name");
+          const email = formData.get("email");
+          const message = formData.get("message");
+          // Send the form data to the server or perform any desired action
+          // Here, we'll just log the form data to the console
+          console.log("Name:", name);
+          console.log("Email:", email);
+          console.log("Message:", message);
+          // Clear the form inputs
+          contactForm.reset();
+        });
+      });
+      
+  </script>
+</body>
+</html>
